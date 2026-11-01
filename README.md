@@ -83,6 +83,8 @@ streamlit run app.py
 The app opens at `http://localhost:8501`. To try it without your own data, upload
 `sample_data/demo_bestellungen.csv`.
 
+The demo data ends on 2026-11-01. For a current 90-day window, regenerate it with `python scripts/generate_demo_data.py` (the end date defaults to today).
+
 ### Tests
 
 ```bash
@@ -100,7 +102,7 @@ core/             Business logic, no UI code (cleaning, trend, reorder, ...)
 ui/               Streamlit components, styling (theme.css), formatting
 scripts/          Generator for the synthetic demo data
 tests/            Unit and pipeline tests
-docs/             Specification, architecture guidelines, UI sketch
+docs/             Specification, architecture guidelines, initial UI sketch (the final design differs, see screenshots)
 ```
 
 The layers only depend downwards (`data` → `core` → `ui`), so the calculation can
