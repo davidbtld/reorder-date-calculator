@@ -7,7 +7,7 @@
 - **Sprache:** Python 3.13 (entwickelt und getestet mit dieser Version)
 - **Oberfläche:** Streamlit, läuft lokal auf `localhost`
 - **Bibliotheken:** pandas, openpyxl, altair, streamlit (siehe `requirements.txt`)
-- **Tests:** pytest (siehe `requirements-dev.txt`), 95 Tests
+- **Tests:** pytest (siehe `requirements-dev.txt`)
 - **Versionierung:** Git
 
 ---
