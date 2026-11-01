@@ -69,8 +69,8 @@ Alle Bilder verwenden synthetische Demo-Daten (`sample_data/demo_bestellungen.cs
 Benötigt Python 3.13 (damit entwickelt und getestet).
 
 ```bash
-git clone <Repository-URL>
-cd <Projektordner>
+git clone https://github.com/davidbtld/reorder-date-calculator.git
+cd reorder-date-calculator
 
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate

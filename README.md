@@ -70,8 +70,8 @@ All screenshots use synthetic demo data (`sample_data/demo_bestellungen.csv`).
 Requires Python 3.13 (developed and tested with this version).
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/davidbtld/reorder-date-calculator.git
+cd reorder-date-calculator
 
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
