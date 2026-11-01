@@ -1,0 +1,41 @@
+# ===== Echte Kundendaten / Shopify-Exporte (NIEMALS veröffentlichen) =====
+*.csv
+*.xlsx
+*.xls
+*.numbers
+# Ausnahme: ausschließlich synthetische Demo-Daten
+!sample_data/
+!sample_data/demo_bestellungen.csv
+# Zusätzlicher Ordner für lokale Testdateien mit echten Daten
+private_data/
+echte_daten/
+
+# ===== Zugangsdaten und Konfiguration =====
+.env
+.env.*
+secrets.toml
+.streamlit/secrets.toml
+
+# ===== Python =====
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ===== Build-Artefakte (PyInstaller) =====
+build/
+dist/
+*.exe
+*.app
+*.dmg
+# pyinstaller.spec bleibt im Repository (Build-Konfiguration)
+
+# ===== Editor / Betriebssystem =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+~$*
