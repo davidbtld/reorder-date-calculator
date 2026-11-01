@@ -1,0 +1,1 @@
+"""Oberflächenbausteine der Lageranalyse gemäß Spezifikationsschritt 7."""
