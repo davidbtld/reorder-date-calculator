@@ -50,14 +50,11 @@ def _render_notices(
         and recommendation.order_immediately
     ):
         reorder_point = recommendation.reorder_point
-        if reorder_point is None:
-            st.error("Der Meldebestand konnte nicht berechnet werden.")
-        else:
-            st.error(
-                "Bestellung muss SOFORT ausgelöst werden.  \n"
-                f"Aktueller Lagerbestand {format_number(inventory, 0)} ≤ "
-                f"Meldebestand {format_number(reorder_point, 1, False)}"
-            )
+        st.error(
+            "Bestellung muss SOFORT ausgelöst werden.  \n"
+            f"Aktueller Lagerbestand {format_number(inventory, 0)} ≤ "
+            f"Meldebestand {format_number(reorder_point, 1, False)}"
+        )
     elif trend.total_quantity == 0:
         st.info(
             "Im gewählten Zeitraum wurden keine Verkäufe des Produkts erfasst. "
@@ -120,17 +117,11 @@ def render_results(
             badge = "Nicht verfügbar"
         else:
             days = recommendation.days_until_reorder
-            if days is None:
-                st.error("Für die Handlungsempfehlung fehlen die verbleibenden Tage.")
-                main_label = "Spätestens bestellen am"
-                main_value = format_date(recommendation.order_date)
-                badge = "Nicht verfügbar"
-            else:
-                main_label = "Spätestens bestellen am"
-                main_value = format_date(recommendation.order_date)
-                badge = "Heute" if days == 0 else (
-                    f"In {days} Tag" if days == 1 else f"In {days} Tagen"
-                )
+            main_label = "Spätestens bestellen am"
+            main_value = format_date(recommendation.order_date)
+            badge = "Heute" if days == 0 else (
+                f"In {days} Tag" if days == 1 else f"In {days} Tagen"
+            )
         with next(result_columns):
             card_key = f"main-card-{urgency or 'info'}"
             with st.container(border=True, key=card_key):

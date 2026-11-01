@@ -42,6 +42,7 @@ def _run_pipeline_cached(
 
 
 def main() -> None:
+    """Startet die Streamlit-Anwendung zur Lageranalyse."""
     st.set_page_config(page_title=APP_TITLE, page_icon="📦", layout="wide")
     apply_theme()
     st.markdown(
