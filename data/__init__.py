@@ -1,0 +1,1 @@
+"""Datenzugriff der Lageranalyse gemäß Spezifikationsschritt 1."""

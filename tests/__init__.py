@@ -1,0 +1,1 @@
+"""Tests der Spezifikationsschritte 1 bis 7."""

@@ -1,0 +1,1 @@
+"""Kernlogik der Lageranalyse gemäß Spezifikationsschritten 2 bis 7."""
