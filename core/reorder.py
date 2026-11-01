@@ -159,9 +159,13 @@ def calculate_reorder_recommendation(
         )
 
     days_until_reorder = (Fraction(inventory) - reorder_point_fraction) // trend
+    try:
+        order_date = today + timedelta(days=int(days_until_reorder))
+    except OverflowError:
+        order_date = None
     return ReorderRecommendation(
         reorder_point=reorder_point,
         order_immediately=False,
         days_until_reorder=int(days_until_reorder),
-        order_date=today + timedelta(days=int(days_until_reorder)),
+        order_date=order_date,
     )

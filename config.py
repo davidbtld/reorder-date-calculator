@@ -4,6 +4,8 @@ import os
 
 # Trend- und Abdeckungsprüfung (Schritte 5–6)
 TREND_WINDOW_DAYS = 90  # Tage
+MAX_INVENTORY = 1_000_000  # Stück
+MAX_LEAD_TIME_DAYS = 365  # Tage
 
 # Diagramm (Spezifikation 5.1)
 CHART_MONTHS = 6  # Monate

@@ -111,8 +111,9 @@ def render_results(
             main_value = "Keine Empfehlung"
             badge = "Keine Trendberechnung"
         elif recommendation.order_date is None:
-            st.error(
-                "Für die Handlungsempfehlung konnte kein Bestelldatum ermittelt werden."
+            st.warning(
+                "Der Bestand reicht rechnerisch über Jahrtausende – "
+                "kein Bestelltermin berechenbar."
             )
             main_label = "Spätestens bestellen am"
             main_value = "Kein Datum verfügbar"

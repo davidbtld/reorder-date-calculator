@@ -3,6 +3,8 @@
 import streamlit as st
 from streamlit.delta_generator import DeltaGenerator
 
+from config import MAX_INVENTORY, MAX_LEAD_TIME_DAYS
+
 
 def render_upload(upload_column: DeltaGenerator):
     """Zeigt den Datei-Upload für CSV- und XLSX-Bestellexporte."""
@@ -33,6 +35,7 @@ def render_parameters(
         inventory = st.number_input(
             "Aktueller Lagerbestand (Stk)",
             min_value=0,
+            max_value=MAX_INVENTORY,
             value=None,
             step=1,
         )
@@ -40,6 +43,7 @@ def render_parameters(
         lead_time_days = st.number_input(
             "Lieferzeit (Tage)",
             min_value=0,
+            max_value=MAX_LEAD_TIME_DAYS,
             value=None,
             step=1,
         )

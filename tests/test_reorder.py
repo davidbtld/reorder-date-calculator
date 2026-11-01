@@ -139,6 +139,34 @@ def test_zero_trend_returns_no_reorder_point_or_date() -> None:
     assert result.order_date is None
 
 
+@pytest.mark.parametrize(
+    ("total_quantity", "covered_days", "inventory", "lead_time_days", "today"),
+    [
+        (2, 1, 999_999_999_999_999, 99_999_999, date(2026, 11, 1)),
+        (1, 10**15, 999_999_999_999_999, 1, date(2026, 11, 1)),
+        (1, 1, 3, 0, date.max),
+    ],
+)
+def test_unrepresentable_order_date_returns_recommendation_without_date(
+    total_quantity: int,
+    covered_days: int,
+    inventory: int,
+    lead_time_days: int,
+    today: date,
+) -> None:
+    result = calculate_reorder_recommendation(
+        total_quantity=total_quantity,
+        covered_days=covered_days,
+        inventory=inventory,
+        lead_time_days=lead_time_days,
+        today=today,
+    )
+
+    assert result.order_immediately is False
+    assert result.days_until_reorder is not None
+    assert result.order_date is None
+
+
 def test_decimal_trend_does_not_create_false_immediate_order() -> None:
     result = calculate_reorder_recommendation(
         total_quantity=1,
